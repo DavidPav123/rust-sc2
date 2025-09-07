@@ -168,31 +168,31 @@ impl Units {
 
 	/// Returns an iterator over the units of the collection.
 	#[inline]
-	pub fn iter(&self) -> Values<u64, Unit> {
+	pub fn iter(&'_ self) -> Values<'_, u64, Unit> {
 		self.0.values()
 	}
 
 	/// Returns mutable iterator over the units of the collection.
 	#[inline]
-	pub fn iter_mut(&mut self) -> ValuesMut<u64, Unit> {
+	pub fn iter_mut(&'_ mut self) -> ValuesMut<'_, u64, Unit> {
 		self.0.values_mut()
 	}
 
 	/// Returns an iterator over (tag, unit) pairs of the collection.
 	#[inline]
-	pub fn pairs(&self) -> Iter<u64, Unit> {
+	pub fn pairs(&'_ self) -> Iter<'_, u64, Unit> {
 		self.0.iter()
 	}
 
 	/// Returns mutable iterator over (tag, unit) pairs of the collection.
 	#[inline]
-	pub fn pairs_mut(&mut self) -> IterMut<u64, Unit> {
+	pub fn pairs_mut(&'_ mut self) -> IterMut<'_, u64, Unit> {
 		self.0.iter_mut()
 	}
 
 	/// Returns an iterator over unit tags of the collection.
 	#[inline]
-	pub fn tags(&self) -> Keys<u64, Unit> {
+	pub fn tags(&'_ self) -> Keys<'_, u64, Unit> {
 		self.0.keys()
 	}
 

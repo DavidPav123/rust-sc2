@@ -41,7 +41,7 @@ impl Player for ZergRushAI {
 		Ok(())
 	}
 
-	fn get_player_settings(&self) -> PlayerSettings {
+	fn get_player_settings(&'_ self) -> PlayerSettings<'_> {
 		PlayerSettings::new(Race::Zerg).with_name("RustyLings")
 	}
 }

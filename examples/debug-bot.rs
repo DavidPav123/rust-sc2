@@ -28,7 +28,7 @@ impl Player for DebugAI {
 		Ok(())
 	}
 
-	fn get_player_settings(&self) -> PlayerSettings {
+	fn get_player_settings(&'_ self) -> PlayerSettings<'_> {
 		PlayerSettings::new(self.race)
 	}
 }
