@@ -1510,7 +1510,8 @@ impl Bot {
 			vec![(self.game_data.units[&building].ability.unwrap(), pos, None)],
 			false,
 		)
-		.unwrap()[0] == ActionResult::Success
+		.unwrap()[0]
+			== ActionResult::Success
 	}
 	/// Simple wrapper around [`query_placement`](Self::query_placement).
 	/// Multi-version of [`can_place`](Self::can_place).
@@ -1610,7 +1611,7 @@ impl Bot {
 
 					if !valid_positions.is_empty() {
 						return if options.random {
-							valid_positions.choose(&mut thread_rng()).copied()
+							valid_positions.choose(&mut rand::rng()).copied()
 						} else {
 							valid_positions.iter().closest(near).copied()
 						};
