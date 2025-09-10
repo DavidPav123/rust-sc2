@@ -163,7 +163,7 @@ impl Units {
 	/// Returns `None` if there's no unit with such tag in the collection.
 	#[inline]
 	pub fn remove(&mut self, u: u64) -> Option<Unit> {
-		self.0.remove(&u)
+		self.0.swap_remove(&u)
 	}
 
 	/// Returns an iterator over the units of the collection.

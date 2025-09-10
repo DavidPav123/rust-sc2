@@ -170,7 +170,7 @@ where
 
 			if removed {
 				Some(Alliance::Enemy)
-			} else if bot.expansions.iter_mut().any(|exp| exp.minerals.remove(u)) {
+			} else if bot.expansions.iter_mut().any(|exp| exp.minerals.swap_remove(u)) {
 				Some(Alliance::Neutral)
 			} else {
 				None
