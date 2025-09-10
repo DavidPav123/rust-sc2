@@ -878,7 +878,7 @@ impl Bot {
 		.0;
 
 		const OFFSET: isize = 7;
-		let offsets = iproduct!((-OFFSET..=OFFSET), (-OFFSET..=OFFSET))
+		let offsets = iproduct!(-OFFSET..=OFFSET, -OFFSET..=OFFSET)
 			.filter(|(x, y)| {
 				let d = x * x + y * y;
 				16 < d && d <= 64
